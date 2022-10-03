@@ -6,18 +6,31 @@ version: 2
 blocks:
   - type: prompt
     alignment: left
+    newline: true
     segments:
       - type: session
         style: plain
         foreground: blue
-        template: "<darkGray>\u256d\u2500\u2500\u257c[</><cyan>{{ .UserName }}</>@{{ .HostName }}<darkGray>]</>"
+        template: "<darkGray>\u250c\u2500\u2500\u257c[</>{{ .UserName }}@{{ .HostName }}<darkGray>]</>"
 
       - type: exit
         style: plain
         foreground: darkGray
-        template: "{{ if or (gt .Code 0) (gt .Env.BG_JOBS_COUNT \"0\") }}\u257e\u2500\u2500\u257c{{ if gt .Code 0 }}[<red>{{ .Code }}</>]{{ end }}{{ if gt .Env.BG_JOBS_COUNT \"0\" }}[<blue>{{ .Env.BG_JOBS_COUNT }}</>]{{ end }}{{ end }}"
+        templates:
+          - "\u257e\u2500\u2500\u257c"
+          - "{{ if gt .Code 0 }}[<red>{{ .Code }}</>]{{ end }}"
+          - '{{ if gt .Env.BG_JOBS_COUNT "0" }}{{ .Env.BG_JOBS_COUNT }}{{ end }}'
 
       - type: time
         style: plain
         foreground: blue
         template: "<darkGray>\u257e\u2500\u2500\u257c[</>{{ .CurrentDate | date .Format }}<darkGray>]</>"
+
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - type: path
+        style: plain
+        foreground: darkGray
+        template: "\u2514\u2500\u2500\u257c[<blue>{{ .Path }}</>]"
