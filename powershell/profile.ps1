@@ -52,6 +52,13 @@ Function Start-PHPUnitFilter
     }
 }
 
+# Set environment variables for Oh-My-Posh!
+function Set-EnvVar {
+    $env:BG_JOBS_COUNT = (Get-Job -State Running).count
+}
+# Call the alias to populate the variables
+New-Alias -Name 'Set-PoshContext' -Value 'Set-EnvVar' -Scope Global -Force
+
 # Aliases
 Set-Alias -Name g       -Value git
 Set-Alias -Name art     -Value Start-Artisan
