@@ -1,0 +1,26 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$username[\ue0b0](fg:yellow bg:cyan)\
+$directory[\ue0b0](fg:cyan bg:purple)\
+$all$shell$character"""
+
+add_newline = true
+
+[directory]
+style = "fg:black bg:cyan"
+read_only_style = ""
+format = "[ $read_only$path ]($style)"
+
+[php]
+symbol = 'php'
+
+[shell]
+powershell_indicator = 'pwsh'
+disabled = false
+
+[username]
+style_root = "fg:red bg:black"
+style_user = "fg:yellow bg:black"
+format = "[\ue0b6[$user ](inverted $style)]($style)"
+show_always = true
