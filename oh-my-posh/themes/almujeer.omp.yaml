@@ -10,12 +10,12 @@ blocks:
       - type: session
         style: plain
         foreground: blue
-        template: "<darkGray>\u256d\u2500\u2500\u257c[</>{{ .UserName }}@{{ .HostName }}<darkGray>]</>"
+        template: "<darkGray>\u256d\u2500\u2500\u257c[</><cyan>{{ .UserName }}</>@{{ .HostName }}<darkGray>]</>"
 
       - type: exit
         style: plain
-        foreground: red
-        template: "<darkGray>\u257e\u2500\u2500\u257c[</>{{ if gt .Code 0 }}{{ .Code }}{{ end }}<darkGray>]</>"
+        foreground: darkGray
+        template: "{{ if or (gt .Code 0) (gt .Env.BG_JOBS_COUNT \"0\") }}\u257e\u2500\u2500\u257c{{ if gt .Code 0 }}[<red>{{ .Code }}</>]{{ end }}{{ if gt .Env.BG_JOBS_COUNT \"0\" }}[<blue>{{ .Env.BG_JOBS_COUNT }}</>]{{ end }}{{ end }}"
 
       - type: time
         style: plain
