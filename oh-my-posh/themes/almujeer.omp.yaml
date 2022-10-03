@@ -12,6 +12,11 @@ blocks:
         foreground: blue
         template: "<darkGray>\u256d\u2500\u2500\u257c[</>{{ .UserName }}@{{ .HostName }}<darkGray>]</>"
 
+      - type: exit
+        style: plain
+        foreground: red
+        template: "<darkGray>\u257e\u2500\u2500\u257c[</>{{ if gt .Code 0 }}{{ .Code }}{{ end }}<darkGray>]</>"
+
       - type: time
         style: plain
         foreground: blue
