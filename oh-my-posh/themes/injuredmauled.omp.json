@@ -268,14 +268,14 @@
                     "type": "git",
                     "style": "diamond",
                     "leading_diamond": "<darkGray>\u251c\u2500\u2500</>\ue0b6",
-                    "background": "white",
+                    "background": "blue",
                     "foreground": "black",
-                    "template": "{{ .RepoName }} "
+                    "template": "\uea62 {{ .RepoName }} "
                 },
                 {
                     "type": "git",
                     "style": "diamond",
-                    "leading_diamond": "<white,background>\ue0b0</>",
+                    "leading_diamond": "<blue,background>\ue0b0</>",
                     "trailing_diamond": "\ue0b0",
                     "background_templates": [
                         "{{ if or (.Working.Changed) (.Staging.Changed) }}yellow{{ end }}",
