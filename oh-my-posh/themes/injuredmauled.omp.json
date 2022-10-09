@@ -73,7 +73,6 @@
         {
             "type": "prompt",
             "alignment": "right",
-            "filler": "<,p:filler> </>",
             "segments": [
                 {
                     "type": "cmake",
@@ -268,6 +267,7 @@
                     "type": "git",
                     "style": "diamond",
                     "leading_diamond": "<darkGray>\u251c\u2500\u2500</>\ue0b6",
+                    "trailing_diamond": "<background,p:filler>\ue0b0</>",
                     "background": "blue",
                     "foreground": "black",
                     "template": "\uea62 {{ .RepoName }} "
@@ -275,8 +275,8 @@
                 {
                     "type": "git",
                     "style": "diamond",
-                    "leading_diamond": "<blue,background>\ue0b0</>",
-                    "trailing_diamond": "\ue0b0",
+                    "leading_diamond": "<p:filler,background>\ue0b0</>",
+                    "trailing_diamond": "<background,p:filler>\ue0b0</>",
                     "background_templates": [
                         "{{ if or (.Working.Changed) (.Staging.Changed) }}yellow{{ end }}",
                         "{{ if and (gt .Ahead 0) (gt .Behind 0)green{{ end }}",
@@ -292,6 +292,33 @@
                         "fetch_status": true
                     },
                     "template": " {{ .HEAD }} "
+                },
+                {
+                    "type": "git",
+                    "style": "diamond",
+                    "leading_diamond": "<p:filler,background>\ue0b0</>",
+                    "trailing_diamond": "<background,p:filler>\ue0b0</>",
+                    "background": "green",
+                    "foreground": "black",
+                    "template": "{{ if .Working.Changed }} working \ue0b1 {{ .Working.String }} {{ end }}"
+                },
+                {
+                    "type": "git",
+                    "style": "diamond",
+                    "leading_diamond": "<p:filler,background>\ue0b0</>",
+                    "trailing_diamond": "<background,p:filler>\ue0b0</>",
+                    "background": "yellow",
+                    "foreground": "black",
+                    "template": "{{ if .Staging.Changed }} staging \ue0b1 {{ .Staging.String }} {{ end }}"
+                },
+                {
+                    "type": "git",
+                    "style": "diamond",
+                    "leading_diamond": "<p:filler,background>\ue0b0</>",
+                    "trailing_diamond": "<background,p:filler>\ue0b0</>",
+                    "background": "yellow",
+                    "foreground": "black",
+                    "template": "{{ if .Upstream }} {{ .UpstreamIcon }} \ue0b1 {{ .Upstream }} {{ end }}"
                 }
             ]
         },
