@@ -282,7 +282,7 @@
                         "{{ if and (gt .Ahead 0) (gt .Behind 0)green{{ end }}",
                         "{{ if gt .Ahead 0 }}magenta{{ end }}",
                         "{{ if gt .Behind 0 }}magenta{{ end }}",
-                        "blue"
+                        "cyan"
                     ],
                     "foreground_templates": [
                         "black"
