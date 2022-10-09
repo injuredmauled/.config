@@ -51,7 +51,6 @@
                     "type": "session",
                     "style": "diamond",
                     "leading_diamond": "<darkGray>\u256d\u2500</>\ue0b6",
-                    // "trailing_diamond": "<background,p:filler>\ue0b0</>",
                     "background": "cyan",
                     "foreground": "black",
                     "template": "{{ .HostName }}::{{ .UserName }} "
@@ -282,7 +281,8 @@
                         "{{ if or (.Working.Changed) (.Staging.Changed) }}yellow{{ end }}",
                         "{{ if and (gt .Ahead 0) (gt .Behind 0)green{{ end }}",
                         "{{ if gt .Ahead 0 }}magenta{{ end }}",
-                        "{{ if gt .Behind 0 }}magenta{{ end }}"
+                        "{{ if gt .Behind 0 }}magenta{{ end }}",
+                        "blue"
                     ],
                     "foreground_templates": [
                         "black"
