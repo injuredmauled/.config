@@ -3,7 +3,25 @@
     "final_space": true,
     "version": 2,
     "palette": {
-        "filler": "black",
+        "nord-0":  "#2e3440",
+        "nord-1":  "#3b4252",
+        "nord-2":  "#434c5e",
+        "nord-3":  "#4c566a",
+        "nord-4":  "#d8dee9",
+        "nord-5":  "#e5e9f0",
+        "nord-6":  "#eceff4",
+        "nord-7":  "#8fbcbb",
+        "nord-8":  "#88c0d0",
+        "nord-9":  "#81a1c1",
+        "nord-10": "#5e81ac",
+        "nord-11": "#bf616a",
+        "nord-12": "#d08770",
+        "nord-13": "#ebcb8b",
+        "nord-14": "#a3be8c",
+        "nord-15": "#b48ead",
+
+        "filler": "p:nord-1",
+
         "cmake-bg": "cyan",
         "cmake-fg": "black",
         "dart-bg": "cyan",
@@ -24,12 +42,12 @@
         "kotlin-fg": "white",
         "lua-bg": "blue",
         "lua-fg": "white",
-        "node-bg": "green",
-        "node-fg": "black",
+        "node-bg": "p:nord-14",
+        "node-fg": "p:nord-0",
         "nx-bg": "blue",
         "nx-fg": "white",
-        "php-bg": "magenta",
-        "php-fg": "black",
+        "php-bg": "p:nord-15",
+        "php-fg": "p:nord-0",
         "python-bg": "blue",
         "python-fg": "yellow",
         "r-bg": "blue",
@@ -53,7 +71,7 @@
                     "leading_diamond": "<darkGray>\u256d\u2500</>\ue0b6",
                     "background": "cyan",
                     "foreground": "black",
-                    "template": "{{ .HostName }}::{{ .UserName }} "
+                    "template": "{{ .HostName }} \ue0b5 {{ .UserName }} "
                 },
                 {
                     "type": "path",
@@ -72,6 +90,7 @@
         },
         {
             "type": "prompt",
+            "filler": "<p:filler,p:filler> </>",
             "alignment": "right",
             "segments": [
                 {
@@ -249,12 +268,13 @@
                     "type": "time",
                     "style": "diamond",
                     "leading_diamond": "<cyan,p:filler>\ue0b2</>",
+                    "trailing_diamond": "\ue0b4 ",
                     "background": "cyan",
                     "foreground": "black",
                     "properties": {
                         "time_format": "15:04"
                     },
-                    "template": " {{ .CurrentDate | date .Format }}  "
+                    "template": " {{ .CurrentDate | date .Format }}"
                 }
             ]
         },
@@ -307,7 +327,7 @@
                     "style": "diamond",
                     "leading_diamond": "<p:filler,background>\ue0b0</>",
                     "trailing_diamond": "<background,p:filler>\ue0b0</>",
-                    "background": "yellow",
+                    "background": "p:nord-12",
                     "foreground": "black",
                     "template": "{{ if .Staging.Changed }} staging \ue0b1 {{ .Staging.String }} {{ end }}"
                 },
@@ -316,8 +336,11 @@
                     "style": "diamond",
                     "leading_diamond": "<p:filler,background>\ue0b0</>",
                     "trailing_diamond": "<background,p:filler>\ue0b0</>",
-                    "background": "yellow",
+                    "background": "magenta",
                     "foreground": "black",
+                    "properties": {
+                        "fetch_upstream_icon": true
+                    },
                     "template": "{{ if .Upstream }} {{ .UpstreamIcon }} \ue0b1 {{ .Upstream }} {{ end }}"
                 }
             ]
