@@ -20,7 +20,7 @@
         "nord-14": "#a3be8c",
         "nord-15": "#b48ead",
 
-        "filler": "p:nord-1",
+        "filler": "p:nord-0",
 
         "cmake-bg": "cyan",
         "cmake-fg": "black",
@@ -68,10 +68,10 @@
                 {
                     "type": "session",
                     "style": "diamond",
-                    "leading_diamond": "<darkGray>\u256d\u2500</>\ue0b6",
+                    "leading_diamond": " \ue0be",
                     "background": "cyan",
                     "foreground": "black",
-                    "template": "{{ .HostName }} \ue0b5 {{ .UserName }} "
+                    "template": "{{ .UserName }} "
                 },
                 {
                     "type": "path",
@@ -82,7 +82,10 @@
                     "foreground": "white",
                     "properties": {
                         "folder_separator_icon": " \ue0b1 ",
-                        "style": "short"
+                        "style": "agnoster",
+                        "mapped_locations": {
+                            "D:\\xampp\\htdocs\\projects": "XAMPP PROJECTS"
+                        }
                     },
                     "template": " {{ .Path }} "
                 }
@@ -268,7 +271,7 @@
                     "type": "time",
                     "style": "diamond",
                     "leading_diamond": "<cyan,p:filler>\ue0b2</>",
-                    "trailing_diamond": "\ue0b4 ",
+                    "trailing_diamond": "\ue0bc  ",
                     "background": "cyan",
                     "foreground": "black",
                     "properties": {
@@ -285,63 +288,64 @@
             "segments": [
                 {
                     "type": "git",
+                    "alias": "repository",
                     "style": "diamond",
-                    "leading_diamond": "<darkGray>\u251c\u2500\u2500</>\ue0b6",
-                    "trailing_diamond": "<background,p:filler>\ue0b0</>",
-                    "background": "blue",
-                    "foreground": "black",
-                    "template": "\uea62 {{ .RepoName }} "
+                    "leading_diamond": "\ue0b0 <transparent,background>\ue0b0</>",
+                    "background": "p:nord-13",
+                    "foreground": "p:nord-1",
+                    "template": " \ue702 \ue0b1 {{ .RepoName }} "
                 },
                 {
                     "type": "git",
+                    "alias": "branch",
                     "style": "diamond",
-                    "leading_diamond": "<p:filler,background>\ue0b0</>",
-                    "trailing_diamond": "<background,p:filler>\ue0b0</>",
-                    "background_templates": [
-                        "{{ if or (.Working.Changed) (.Staging.Changed) }}yellow{{ end }}",
-                        "{{ if and (gt .Ahead 0) (gt .Behind 0)green{{ end }}",
-                        "{{ if gt .Ahead 0 }}magenta{{ end }}",
-                        "{{ if gt .Behind 0 }}magenta{{ end }}",
-                        "white"
-                    ],
-                    "foreground_templates": [
-                        "black"
-                    ],
+                    "leading_diamond": "<p:nord-13,background>\ue0b0</>",
+                    "trailing_diamond": "\ue0b0 ",
+                    "background": "p:nord-3",
+                    "foreground": "p:nord-6",
                     "properties": {
-                        "branch_icon": "\ue0a0 ",
-                        "fetch_status": true
+                        "branch_icon": "\ue0a0 "
                     },
                     "template": " {{ .HEAD }} "
                 },
                 {
                     "type": "git",
+                    "alias": "working",
                     "style": "diamond",
                     "leading_diamond": "<p:filler,background>\ue0b0</>",
                     "trailing_diamond": "<background,p:filler>\ue0b0</>",
-                    "background": "green",
-                    "foreground": "black",
+                    "background": "p:nord-8",
+                    "foreground": "p:nord-1",
                     "template": "{{ if .Working.Changed }} working \ue0b1 {{ .Working.String }} {{ end }}"
                 },
                 {
                     "type": "git",
+                    "alias": "staging",
                     "style": "diamond",
                     "leading_diamond": "<p:filler,background>\ue0b0</>",
                     "trailing_diamond": "<background,p:filler>\ue0b0</>",
-                    "background": "p:nord-12",
-                    "foreground": "black",
+                    "background": "p:nord-9",
+                    "foreground": "p:nord-1",
                     "template": "{{ if .Staging.Changed }} staging \ue0b1 {{ .Staging.String }} {{ end }}"
-                },
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "filler": "<,p:filler> </>",
+            "alignment": "right",
+            "segments": [
                 {
                     "type": "git",
                     "style": "diamond",
-                    "leading_diamond": "<p:filler,background>\ue0b0</>",
-                    "trailing_diamond": "<background,p:filler>\ue0b0</>",
-                    "background": "magenta",
-                    "foreground": "black",
+                    "leading_diamond": "<background,p:filler>\ue0b2</>",
+                    "trailing_diamond": "<p:filler,background>\ue0be</> ",
+                    "background": "p:nord-15",
+                    "foreground": "p:nord-1",
                     "properties": {
                         "fetch_upstream_icon": true
                     },
-                    "template": "{{ if .Upstream }} {{ .UpstreamIcon }} \ue0b1 {{ .Upstream }} {{ end }}"
+                    "template": "{{ if .Upstream }} {{ .Upstream }} \ue0b3 {{ .UpstreamIcon }} {{ end }}"
                 }
             ]
         },
@@ -353,15 +357,15 @@
                 {
                     "type": "shell",
                     "style": "diamond",
-                    "leading_diamond": "<darkGray>\u2570\u2500\u2500\u2500</>\ue0b6",
+                    "leading_diamond": " \ue0ba",
                     "trailing_diamond": "\ue0b0",
                     "background_templates": [
-                        "{{ if gt .Code 0 }}red{{ end }}",
-                        "green"
+                        "{{ if gt .Code 0 }}p:nord-11{{ end }}",
+                        "p:nord-14"
                     ],
                     "foreground_templates": [
-                        "{{ if gt .Code 0 }}white{{ end }}",
-                        "black"
+                        "{{ if gt .Code 0 }}p:nord-6{{ end }}",
+                        "p:nord-0"
                     ],
                     "template": "{{ .Name }} "
                 }
