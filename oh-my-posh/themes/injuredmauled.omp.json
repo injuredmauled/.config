@@ -337,6 +337,7 @@
                 },
                 {
                     "type": "git",
+                    "alias": "upstream",
                     "style": "diamond",
                     "leading_diamond": "<background,p:filler>\ue0b2</>",
                     "trailing_diamond": "\ue0bc ",
