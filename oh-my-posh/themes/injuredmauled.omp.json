@@ -1,0 +1,374 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "final_space": true,
+    "version": 2,
+    "palette": {
+        "nord-0":  "#2e3440",
+        "nord-1":  "#3b4252",
+        "nord-2":  "#434c5e",
+        "nord-3":  "#4c566a",
+        "nord-4":  "#d8dee9",
+        "nord-5":  "#e5e9f0",
+        "nord-6":  "#eceff4",
+        "nord-7":  "#8fbcbb",
+        "nord-8":  "#88c0d0",
+        "nord-9":  "#81a1c1",
+        "nord-10": "#5e81ac",
+        "nord-11": "#bf616a",
+        "nord-12": "#d08770",
+        "nord-13": "#ebcb8b",
+        "nord-14": "#a3be8c",
+        "nord-15": "#b48ead",
+
+        "filler": "p:nord-0",
+
+        "cmake-bg": "cyan",
+        "cmake-fg": "black",
+        "dart-bg": "cyan",
+        "dart-fg": "black",
+        "dotnet-bg": "magenta",
+        "dotnet-fg": "black",
+        "flutter-bg": "cyan",
+        "flutter-fg": "black",
+        "go-bg": "cyan",
+        "go-fg": "black",
+        "haskell-bg": "magenta",
+        "haskell-fg": "black",
+        "java-bg": "red",
+        "java-fg": "black",
+        "julia-bg": "white",
+        "julia-fg": "darkGray",
+        "kotlin-bg": "darkGray",
+        "kotlin-fg": "white",
+        "lua-bg": "blue",
+        "lua-fg": "white",
+        "node-bg": "p:nord-14",
+        "node-fg": "p:nord-0",
+        "nx-bg": "blue",
+        "nx-fg": "white",
+        "php-bg": "p:nord-15",
+        "php-fg": "p:nord-0",
+        "python-bg": "blue",
+        "python-fg": "yellow",
+        "r-bg": "blue",
+        "r-fg": "black",
+        "ruby-bg": "red",
+        "ruby-fg": "white",
+        "rust-bg": "yellow",
+        "rust-fg": "black",
+        "swift-bg": "yellow",
+        "swift-fg": "black"
+    },
+    "blocks": [
+        {
+            "type": "prompt",
+            "newline": true,
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "session",
+                    "style": "diamond",
+                    "leading_diamond": " \ue0be",
+                    "background": "p:nord-8",
+                    "foreground": "p:nord-1",
+                    "template": " {{ .UserName }} "
+                },
+                {
+                    "type": "path",
+                    "style": "diamond",
+                    "leading_diamond": "<cyan,background>\ue0b0</>",
+                    "trailing_diamond": "<darkGray,transparent>\ue0b0</>",
+                    "background": "darkGray",
+                    "foreground": "white",
+                    "properties": {
+                        "folder_separator_icon": " \ue0b1 ",
+                        "style": "agnoster",
+                        "mapped_locations": {
+                            "D:\\xampp\\htdocs\\projects": "XAMPP PROJECTS"
+                        }
+                    },
+                    "template": " {{ .Path }} "
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "right",
+            "segments": [
+                {
+                    "type": "cmake",
+                    "style": "diamond",
+                    "leading_diamond": "<p:cmake-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:cmake-bg>\ue0b2</>",
+                    "background": "p:cmake-bg",
+                    "foreground": "p:cmake-fg",
+                    "template": " {{ .Full }} \ue0b3 cmake "
+                },
+                {
+                    "type": "dart",
+                    "style": "diamond",
+                    "leading_diamond": "<p:dart-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:dart-bg>\ue0b2</>",
+                    "background": "p:dart-bg",
+                    "foreground": "p:dart-fg",
+                    "template": " {{ .Full }} \ue0b3 dart "
+                },
+                {
+                    "type": "dotnet",
+                    "style": "diamond",
+                    "leading_diamond": "<p:dotnet-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:dotnet-bg>\ue0b2</>",
+                    "background": "p:dotnet-bg",
+                    "foreground": "p:dotnet-fg",
+                    "template": " {{ .Full }} \ue0b3 dotnet "
+                },
+                {
+                    "type": "flutter",
+                    "style": "diamond",
+                    "leading_diamond": "<p:flutter-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:flutter-bg>\ue0b2</>",
+                    "background": "p:flutter-bg",
+                    "foreground": "p:flutter-fg",
+                    "template": " {{ .Full }} \ue0b3 flutter "
+                },
+                {
+                    "type": "go",
+                    "style": "diamond",
+                    "leading_diamond": "<p:go-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:go-bg>\ue0b2</>",
+                    "background": "p:go-bg",
+                    "foreground": "p:go-fg",
+                    "template": " {{ .Full }} \ue0b3 go "
+                },
+                {
+                    "type": "haskell",
+                    "style": "diamond",
+                    "leading_diamond": "<p:haskell-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:haskell-bg>\ue0b2</>",
+                    "background": "p:haskell-bg",
+                    "foreground": "p:haskell-fg",
+                    "template": " {{ .Full }} \ue0b3 haskell "
+                },
+                {
+                    "type": "java",
+                    "style": "diamond",
+                    "leading_diamond": "<p:java-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:java-bg>\ue0b2</>",
+                    "background": "p:java-bg",
+                    "foreground": "p:java-fg",
+                    "template": " {{ .Full }} \ue0b3 java "
+                },
+                {
+                    "type": "julia",
+                    "style": "diamond",
+                    "leading_diamond": "<p:julia-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:julia-bg>\ue0b2</>",
+                    "background": "p:julia-bg",
+                    "foreground": "p:julia-fg",
+                    "template": " {{ .Full }} \ue0b3 julia "
+                },
+                {
+                    "type": "kotlin",
+                    "style": "diamond",
+                    "leading_diamond": "<p:kotlin-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:kotlin-bg>\ue0b2</>",
+                    "background": "p:kotlin-bg",
+                    "foreground": "p:kotlin-fg",
+                    "template": " {{ .Full }} \ue0b3 kotlin "
+                },
+                {
+                    "type": "lua",
+                    "style": "diamond",
+                    "leading_diamond": "<p:lua-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:lua-bg>\ue0b2</>",
+                    "background": "p:lua-bg",
+                    "foreground": "p:lua-fg",
+                    "template": " {{ .Full }} \ue0b3 lua "
+                },
+                {
+                    "type": "node",
+                    "style": "diamond",
+                    "leading_diamond": "<background,transparent>\ue0b2</>",
+                    "trailing_diamond": "<p:node-bg,transparent>\ue0b0</>",
+                    "background": "p:nord-1",
+                    "foreground": "p:nord-6",
+                    "template": " {{ .Full }} <p:node-bg>\ue0b2</><background,p:node-bg> node </>"
+                },
+                {
+                    "type": "nx",
+                    "style": "diamond",
+                    "leading_diamond": "<blue,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,blue>\ue0b2</>",
+                    "background": "blue",
+                    "foreground": "black",
+                    "template": " {{ .Full }} \ue0b3 nx "
+                },
+                {
+                    "type": "perl",
+                    "style": "diamond",
+                    "leading_diamond": "<p:nx-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:nx-bg>\ue0b2</>",
+                    "background": "p:nx-bg",
+                    "foreground": "p:nx-fg",
+                    "template": " {{ .Full }} \ue0b3 perl "
+                },
+                {
+                    "type": "php",
+                    "style": "diamond",
+                    "leading_diamond": "<p:php-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:php-bg>\ue0b2</>",
+                    "background": "p:php-bg",
+                    "foreground": "p:php-fg",
+                    "template": " {{ .Full }} \ue0b3 php "
+                },
+                {
+                    "type": "python",
+                    "style": "diamond",
+                    "leading_diamond": "<p:python-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:python-bg>\ue0b2</>",
+                    "background": "p:python-bg",
+                    "foreground": "p:python-fg",
+                    "template": " {{ .Full }} \ue0b3 python "
+                },
+                {
+                    "type": "r",
+                    "style": "diamond",
+                    "leading_diamond": "<p:r-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:r-bg>\ue0b2</>",
+                    "background": "p:r-bg",
+                    "foreground": "p:r-fg",
+                    "template": " {{ .Full }} \ue0b3 r "
+                },
+                {
+                    "type": "ruby",
+                    "style": "diamond",
+                    "leading_diamond": "<p:ruby-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:ruby-bg>\ue0b2</>",
+                    "background": "p:ruby-bg",
+                    "foreground": "p:ruby-fg",
+                    "template": " {{ .Full }} \ue0b3 ruby "
+                },
+                {
+                    "type": "rust",
+                    "style": "diamond",
+                    "leading_diamond": "<p:rust-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:rust-bg>\ue0b2</>",
+                    "background": "p:rust-bg",
+                    "foreground": "p:rust-fg",
+                    "template": " {{ .Full }} \ue0b3 rust "
+                },
+                {
+                    "type": "swift",
+                    "style": "diamond",
+                    "leading_diamond": "<p:swift-bg,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,p:swift-bg>\ue0b2</>",
+                    "background": "p:swift-bg",
+                    "foreground": "p:swift-fg",
+                    "template": " {{ .Full }} \ue0b3 swift "
+                },
+                {
+                    "type": "time",
+                    "style": "diamond",
+                    "leading_diamond": "<cyan,transparent>\ue0b2</>",
+                    "trailing_diamond": "\ue0bc ",
+                    "background": "cyan",
+                    "foreground": "black",
+                    "properties": {
+                        "time_format": "15:04"
+                    },
+                    "template": " {{ .CurrentDate | date .Format }} "
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "newline": true,
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "git",
+                    "alias": "repository",
+                    "style": "diamond",
+                    "leading_diamond": " <background,transparent>\ue0b2</>",
+                    "background": "p:nord-13",
+                    "foreground": "p:nord-1",
+                    "template": " \uf7a1 {{ .RepoName }} "
+                },
+                {
+                    "type": "git",
+                    "alias": "branch",
+                    "style": "diamond",
+                    "leading_diamond": "<p:nord-13,background>\ue0b0</>",
+                    "trailing_diamond": "\ue0b0 ",
+                    "background": "p:nord-3",
+                    "foreground": "p:nord-6",
+                    "properties": {
+                        "branch_icon": "\ue0a0 "
+                    },
+                    "template": " {{ .HEAD }} "
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "right",
+            "segments": [
+                {
+                    "type": "git",
+                    "alias": "working",
+                    "style": "diamond",
+                    "leading_diamond": "<background,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,background>\ue0b2</>",
+                    "background": "p:nord-8",
+                    "foreground": "p:nord-1",
+                    "template": "{{ if .Working.Changed }} {{ .Working.String }} \ue0b3 working {{ end }}"
+                },
+                {
+                    "type": "git",
+                    "alias": "staging",
+                    "style": "diamond",
+                    "leading_diamond": "<background,transparent>\ue0b2</>",
+                    "trailing_diamond": "<transparent,background>\ue0b2</>",
+                    "background": "p:nord-9",
+                    "foreground": "p:nord-1",
+                    "template": "{{ if .Staging.Changed }} {{ .Staging.String }} \ue0b3 staging {{ end }}"
+                },
+                {
+                    "type": "git",
+                    "alias": "upstream",
+                    "style": "diamond",
+                    "leading_diamond": "<background,transparent>\ue0b2</>",
+                    "trailing_diamond": "<p:nord-15>\ue0b0</> ",
+                    "background": "p:nord-1",
+                    "foreground": "p:nord-6",
+                    "properties": {
+                        "fetch_upstream_icon": true
+                    },
+                    "template": "{{ if .Upstream }} {{ .Upstream }} <p:nord-15>\ue0b2</><p:nord-1,p:nord-15> {{ .UpstreamIcon }} </>{{ end }}"
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "newline": true,
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "shell",
+                    "style": "diamond",
+                    "leading_diamond": " \ue0ba",
+                    "trailing_diamond": "\ue0b0",
+                    "background_templates": [
+                        "{{ if gt .Code 0 }}p:nord-11{{ end }}",
+                        "p:nord-14"
+                    ],
+                    "foreground_templates": [
+                        "{{ if gt .Code 0 }}p:nord-6{{ end }}",
+                        "p:nord-0"
+                    ],
+                    "template": " {{ .Name }} "
+                }
+            ]
+        }
+    ]   
+}

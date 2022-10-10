@@ -2,6 +2,7 @@
 
 # Git integration for Powershell
 Import-Module -Name posh-git
+$env:POSH_GIT_ENABLED = $TRUE
 
 # Terminal Icons
 Import-Module -Name Terminal-Icons
@@ -72,6 +73,5 @@ Set-Alias -Name vim     -Value nvim
 scoop-search --hook | iex
 
 # Custom Prompt
-oh-my-posh init pwsh --config "$HOME\.config\oh-my-posh\themes\almujeer.omp.yaml" | iex
-# starship init powershell | iex
+oh-my-posh init pwsh --config "$HOME\.config\oh-my-posh\themes\injuredmauled.omp.json" | iex
 
