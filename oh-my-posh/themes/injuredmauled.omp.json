@@ -71,7 +71,7 @@
                     "leading_diamond": " \ue0be",
                     "background": "cyan",
                     "foreground": "black",
-                    "template": "{{ .UserName }} "
+                    "template": " {{ .UserName }} "
                 },
                 {
                     "type": "path",
@@ -271,13 +271,13 @@
                     "type": "time",
                     "style": "diamond",
                     "leading_diamond": "<cyan,p:filler>\ue0b2</>",
-                    "trailing_diamond": "\ue0bc  ",
+                    "trailing_diamond": "\ue0b8 ",
                     "background": "cyan",
                     "foreground": "black",
                     "properties": {
                         "time_format": "15:04"
                     },
-                    "template": " {{ .CurrentDate | date .Format }}"
+                    "template": " {{ .CurrentDate | date .Format }} "
                 }
             ]
         },
@@ -307,26 +307,6 @@
                         "branch_icon": "\ue0a0 "
                     },
                     "template": " {{ .HEAD }} "
-                },
-                {
-                    "type": "git",
-                    "alias": "working",
-                    "style": "diamond",
-                    "leading_diamond": "<p:filler,background>\ue0b0</>",
-                    "trailing_diamond": "<background,p:filler>\ue0b0</>",
-                    "background": "p:nord-8",
-                    "foreground": "p:nord-1",
-                    "template": "{{ if .Working.Changed }} working \ue0b1 {{ .Working.String }} {{ end }}"
-                },
-                {
-                    "type": "git",
-                    "alias": "staging",
-                    "style": "diamond",
-                    "leading_diamond": "<p:filler,background>\ue0b0</>",
-                    "trailing_diamond": "<background,p:filler>\ue0b0</>",
-                    "background": "p:nord-9",
-                    "foreground": "p:nord-1",
-                    "template": "{{ if .Staging.Changed }} staging \ue0b1 {{ .Staging.String }} {{ end }}"
                 }
             ]
         },
@@ -337,9 +317,29 @@
             "segments": [
                 {
                     "type": "git",
+                    "alias": "working",
                     "style": "diamond",
                     "leading_diamond": "<background,p:filler>\ue0b2</>",
-                    "trailing_diamond": "<p:filler,background>\ue0be</> ",
+                    "trailing_diamond": "<p:filler,background>\ue0b2</>",
+                    "background": "p:nord-8",
+                    "foreground": "p:nord-1",
+                    "template": "{{ if .Working.Changed }} {{ .Working.String }} \ue0b3 working {{ end }}"
+                },
+                {
+                    "type": "git",
+                    "alias": "staging",
+                    "style": "diamond",
+                    "leading_diamond": "<background,p:filler>\ue0b2</>",
+                    "trailing_diamond": "<p:filler,background>\ue0b2</>",
+                    "background": "p:nord-9",
+                    "foreground": "p:nord-1",
+                    "template": "{{ if .Staging.Changed }} {{ .Staging.String }} \ue0b3 staging {{ end }}"
+                },
+                {
+                    "type": "git",
+                    "style": "diamond",
+                    "leading_diamond": "<background,p:filler>\ue0b2</>",
+                    "trailing_diamond": "\ue0bc ",
                     "background": "p:nord-15",
                     "foreground": "p:nord-1",
                     "properties": {
@@ -367,7 +367,7 @@
                         "{{ if gt .Code 0 }}p:nord-6{{ end }}",
                         "p:nord-0"
                     ],
-                    "template": "{{ .Name }} "
+                    "template": " {{ .Name }} "
                 }
             ]
         }
